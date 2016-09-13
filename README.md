@@ -8,6 +8,15 @@
 - ***Datum***: 2016.09.08.
 - ***Hely***: Szabo Ervin konyvtar
   - pici thread kezeles
-  - pici lambda 
-  
+  - pici lambda
 
+  ### ora_2
+  - ***Datum***: 2016.09.12.
+  - ***Hely***: Szabo Ervin konyvtar
+  - lambda (lasd. ora_2 pland.md)
+
+  #### Note 
+  - a forditasi hiba oka az volt hogy az operator() nem volt megjelolve consttal igy viszont nem 
+  lehetet meghivni a const ref zarojelet
+  - raktam a Funvtionba egy `get_id` fuggvenyt es meghion a lambda elott es a lambdaban, latszik hogy nem 1 -szer 
+  hanem 2 szer masolodik le. a kerdes csak az hogy miert? ha van otlet ide le lehet irni.
