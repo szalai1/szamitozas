@@ -23,20 +23,22 @@ Dekorator dekoratorGenerator(Dekorator dekorator) {
 }
 
 //az initializer_list a ... ot helyettesiti 
-Dekorator dekoratorGenerator(Dekorator dekorator, Dekorator ... dekorators) {
+Dekorator dekoratorGenerator(std::initializer_list<Dekorator> dekors) {
   //ha = van a []-ban akkor mindent masol ami a korulotte levo scope-ban van.
-  return [=](std::string s) {
-    s = dekorator(s);
-    return dekoratorGenerator(dekorators)(s);
-  };
+  return [dekors](std::string str) {
+    for(auto dekor: dekors) {
+      str = dekors(str);
+    }
+    return str;
+  }
 }
 
 int main() {
-  std::function<std::string(std::string)> cakkozo = zarojelezoGenerator("{", "}");
+  Dekorator cakkozo = zarojelezoGenerator("{", "}");
   kiir("alma", zarojelezoGenerator("< ", " >"));
   kiir("korte",  zarojelezoGenerator("==== ", " ===="));
   kiir("dinnye",  zarojelezoGenerator("~~~\t", "\t~~~"));
-  kiir("barack", dekoratorGenerator(zarojelezoGenerator("< ", " >"),
+  kiir("barack", dekoratorGenerator(cakkozo,
 				    zarojelezoGenerator("==== ", " ===="),
 				    zarojelezoGenerator("~~~\t", "\t~~~"));
 }
