@@ -16,7 +16,7 @@
   - lambda (lasd. ora_2 pland.md)
 
   #### Note 
-  - a forditasi hiba oka az volt hogy az operator() nem volt megjelolve consttal igy viszont nem 
+  - a forditasi hiba oka az volt hogy az `operator()` nem volt megjelolve consttal igy viszont nem 
   lehetet meghivni a const ref zarojelet
-  - raktam a Funvtionba egy `get_id` fuggvenyt es meghion a lambda elott es a lambdaban, latszik hogy nem 1 -szer 
+  - raktam a `Function`ba egy `get_id` fuggvenyt es meghion a lambda elott es a lambdaban, latszik hogy nem 1 -szer 
   hanem 2 szer masolodik le. a kerdes csak az hogy miert? ha van otlet ide le lehet irni.
